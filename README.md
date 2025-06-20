@@ -11,6 +11,7 @@ To identify and exploit real-world vulnerabilities using professional penetratio
 ## 🛠️ Tools Used
 
 - **Kali Linux (Attacker Machine)**
+- Nmap (for port scanning and service version detection)
 - **Nikto** – Web server vulnerability scanner
 - **Metasploit Framework** – Exploitation and payload management
 
